@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Edina Soljankic">
+
+    <title>Assignment - Kreiranje responsive galerije</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+
+        }
+
+        #main-container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+
+        #box-container {
+            display: grid;
+            grid-template-columns: repeat(5, auto);
+            gap: 50px;
+
+        }
+
+        .box {
+            position: relative;
+            background-color: rgb(128, 167, 240);
+            background-image: url("placeholder-image.png");
+            min-width: 100px;
+            max-width: 150px;
+            height: 100px;
+            background-position: top;
+            background-size: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            box-shadow: 0 0 5px rgb(236, 231, 231);
+
+        }
+
+        p {
+            margin-top: 50px;
+        }
+
+        .box::after {
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            content: "Image title";
+            font-size: 13px;
+            text-align: center;
+            bottom: -20px;
+            background-color: #fbfbfb;
+            box-sizing: border-box;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 0 0 5px rgb(236, 231, 231);
+            
+        }
+
+        @media screen and (max-width: 1024px) {
+            #box-container {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            p {
+                font-size: 16px;
+
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            #box-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            #box-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            p {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-container">
+        <h2>Gallery heading</h2>
+        <div id="box-container">
+            <div class=box></div>
+            <div class=box></div>
+            <div class=box></div>
+            <div class=box></div>
+            <div class=box></div>
+            <div class=box></div>
+            <div class=box></div>
+            <div class=box></div>
+            <div class=box></div>
+            <div class=box></div>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quam repudiandae libero eius porro eos illo
+            numquam accusamus eaque! Velit incidunt error adipisci repellat quis? Pariatur aperiam nisi sequi omnis.
+            Assumenda quidem aperiam sint error enim nemo, recusandae sapiente doloribus, sequi id corrupti corporis
+            molestias earum libero saepe blanditiis eveniet consequuntur minima. Dolor nobis, error tempore corrupti
+            nostrum magni quidem.</p>
+    </div>
+
+</body>
+
+</html>
